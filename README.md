@@ -1,0 +1,71 @@
+# Building a Blog with Rails
+
+For pure learning porposes, I've tryed here to build a Twitter clone using what I've learned so far about Rails:
+  - Models
+  - MVC concept
+  - Sessions, Cookies
+  - Authentication
+
+## Built with:
+
+<a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/ruby-lang/ruby-lang-horizontal.svg"></a>
+<a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg"></a>
+<a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg"></a>
+<a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg"></a>
+
+- Framework/API : ``Ruby on Rails``, ``Bootstrap 4``
+- Langage: ``Ruby``
+- Text-editor: ``Visual Studio Code``
+
+
+## Models
+
+The models created and their relationships:
+```
+Post:
+  -Body:text
+  HAS_MANY:
+  HAS_MANY:
+```
+
+## Getting started
+
+To get a local copy of the repository please run the following commands on your terminal:
+
+```
+$ git clone git@github.com:CalyCherkaoui/my_twitter_clone.git
+$ cd my_twitter_clone
+$ git checkout development
+$ bundle install
+$ yarn install --check-files
+$ rails db:migrate
+$ rails server
+```
+In your browser's adress field, type : http://localhost:3000
+
+## Author
+
+👤 **Houda Cherkaoui**
+
+- Github: [@CalyCherkaoui](https://github.com/CalyCherkaoui)
+- Twitter: [@Houda59579688](https://twitter.com/Houda59579688)
+- Linkedin: [Houda-Cherkaoui](https://www.linkedin.com/in/houda-cherkaoui-64106395/)
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- [ Web-Crunch](https://www.youtube.com/watch?time_continue=1&v=5gUysPm64a4&feature=emb_logo) 
+
+## 📝 License
+
+This project is [MIT]() licensed.
