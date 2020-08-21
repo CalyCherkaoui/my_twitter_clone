@@ -11,10 +11,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div id="bg-clip"></div>
-
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <body class="has-navbar-fixed-top">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
 
         <%= link_to root_path, class: "navbar-item brand-logo" do %>
@@ -88,5 +86,13 @@
 
     <%= yield %>
   </body>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong class="brand-logo">GossipLand</strong> by <a href="https://jgthms.com">Houda Cherkaoui</a>. The source code is licensed
+        <a href="#">MIT</a>.
+      </p>
+    </div>
+  </footer>
 
 </html>

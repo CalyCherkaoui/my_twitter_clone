@@ -18,60 +18,45 @@
 @import url("https://fonts.googleapis.com/css?family=Crafty+Girls|Indie+Flower|Just+Another+Hand|Lakki+Reddy|Mansalva|Nanum+Gothic|Parisienne|Rock+Salt|Sacramento|Sedgwick+Ave+Display&display=swap");
 
 
-@mixin desktop {
-  @media (min-width: 840px) {
-    @content;
-
-  }
-}
-
 body, html {
   height: auto;
 }
 
 
 .navbar {
-  background-color: transparent;
+  background-color: #1A2236;
 }
 
 .brand-logo {
+  font-family: 'Sacramento', cursive;
+  color: #1A2236;
+  font-size: 2em;
+
   h1 {
     color: white !important;
-    font-family: 'Sacramento', cursive;
     font-weight: 1000 !important;
-    font-size: 4em !important;
+    font-size: 2.5rem !important;
   }
+
 }
 
-.image {
-  border-radius: 50%;
-  img {
-    border-radius: 50%;
-  }
+// .image {
+//   border-radius: 50%;
+//   img {
+//     border-radius: 50%;
+//   }
+// }
+
+.notification {
+  margin-top: 1.5em;
 }
 
 .notifications:not(:last-child) {
   margin-bottom: 0;
 }
 
-#bg-clip {
-  clip-path: polygon(0 0, 100% 0, 100% 16%, 57% 49%, 0 100%, 0% 50%);
-  background-color: #f42;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-
-  @include desktop {
-
-    clip-path: polygon(0 0, 100% 0, 100% 10%, 60% 45%, 0 98%, 0% 50%);;
-
-  }
-}
-
 
 // gossip card
-
 
 .gossip-container {
 
@@ -81,7 +66,7 @@ body, html {
   border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 100%;
-  margin: 10vh auto;
+  margin: 2em auto;
 
   .name-lockup {
 
@@ -92,8 +77,8 @@ body, html {
     }
 
     .avatar {
-      width: 100px;
-      height: 100px;
+      width: 5em;
+      height: 5em;
       object-fit: cover;
       border-radius: 5px;
       float: left;
@@ -105,6 +90,7 @@ body, html {
       font-size: 1.1em;
       padding-top: 7px;
       margin-left: 10px;
+      color: #1C528A;
       span {
         font-weight: normal;
         color: grey;
@@ -117,8 +103,9 @@ body, html {
 
   blockquote {
     margin: 30px 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: #1A2236;
   }
 
   .actions {
@@ -126,21 +113,38 @@ body, html {
     border-bottom: 1px solid #eee;
     margin-bottom: 20px;
     [class*="icon-"] {
-      color: #999;
+      color: #ff9600;
       margin-right: 20px;
       &::before {
         margin-right: 5px;
       }
-
-      &.icon-star {
-        color: #ff9600;
-      }
     }
-
-    time {
-      color: #999;
-      font-size: 0.7em;
-    }
-    
   }
+
+  .time {
+    color: gray;
+    font-size: 0.8em;
+  }
+
+}
+
+// side panels Who to follow and Top 3
+
+.side-panel {
+  background-color: #1A2236;
+  color: white;
+}
+
+.user-profile-card {
+  margin-bottom: 2em;
+}
+
+.panel-trend {
+  margin-bottom: 2em;
+}
+
+// footer
+
+.footer {
+
 }
