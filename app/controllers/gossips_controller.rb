@@ -1,5 +1,6 @@
 class GossipsController < ApplicationController
   before_action :set_gossip, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, expept: [:index, :show]
 
   # GET /gossips
   # GET /gossips.json
