@@ -4,7 +4,7 @@ class GossipsController < ApplicationController
   # GET /gossips
   # GET /gossips.json
   def index
-    @gossips = Gossip.all
+    @gossips = Gossip.all.order("created_at DESC")
   end
 
   # GET /gossips/1

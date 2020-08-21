@@ -1,0 +1,33 @@
+<div class="column">
+
+  <% @gossips.each do |gossip| %>
+    <div class="gossip-container">
+
+      <div class="name-lockup">
+
+          <img class="avatar" src="https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_960_720.jpg" alt="cat-avatar">
+          <div class="name">CatyCat <span>@snoopy33</span></div>
+
+      </div>
+
+      <blockquote>
+        <%= gossip.body %>
+      </blockquote>
+
+      <div class="actions">
+          <i class="icon-reply">Reply</i>
+          <i class="icon-retweet">Spread</i>
+          <i class="icon-star">Like</i>
+          <i class="icon-ellipsis-horizontal">Dislike</i>
+          <%= link_to 'Show', gossip, class: "icon-show" %>
+          <%= link_to 'Edit', edit_gossip_path(gossip), class: "icon-edit"%>
+          <%= link_to 'Destroy', gossip, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-delete" %>
+      </div>
+
+      <time><%= time_ago_in_words(gossip.created_at) %> ago</time>
+
+    </div>
+  <% end %>
+</div>
+<br>
+<%= link_to 'New Gossip', new_gossip_path %>
