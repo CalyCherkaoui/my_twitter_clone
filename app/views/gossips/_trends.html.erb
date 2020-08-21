@@ -1,28 +1,48 @@
 <div class="column">
+
   <div class="card add-gossip is-hidden-desktop">
     <div class="card-content">
       <div class="media">
         <div class="media-left">
           <figure class="image is-48x48">
-            <img src="https://versions.bulma.io/0.7.4/images/placeholders/96x96.png" alt="Placeholder image">
+            <img src="https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_960_720.jpg" alt="Placeholder image">
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-4">John Smith</p>
-          <p class="subtitle is-6">@johnsmith</p>
+          <p class="title is-5">Hey, Tom Cat! Any Gossip to share?</p>
         </div>
       </div>
 
       <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-        <a href="#">#css</a> <a href="#">#responsive</a>
-        <br>
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
         <%= link_to 'New Gossip', new_gossip_path %>
+
+        <%= form_for @gossip do |form| %>
+            <% if @gossip.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
+
+                <ul>
+                  <% gossip.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="field">
+              <%= form.text_area :body, class: "textarea", placeholder: "Type your gossip here !!"%>
+            </div>
+
+            <div class="actions">
+              <%= form.submit class: "button is-fullwidth is-link is-outlined" %>
+            </div>
+        <% end %>
+
       </div>
     </div>
   </div>
+
+
   <div class="card user-profile-card is-hidden-touch">
     <div class="card-image">
       <figure class="image is-4by3">

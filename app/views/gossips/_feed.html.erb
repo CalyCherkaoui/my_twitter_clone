@@ -13,8 +13,41 @@
       </div>
 
       <div class="content">
-        <textarea class="textarea" placeholder="Type your gossip here !!"></textarea>
         <%= link_to 'New Gossip', new_gossip_path %>
+
+        <%= form_for @gossip do |form| %>
+        <% if @gossip.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
+
+          <ul>
+            <% gossip.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.text_area :body, class: "textarea", placeholder: "Type your gossip here !!"%>
+        </div>
+
+        <div class="actions">
+          <%= form.submit class: "button is-fullwidth is-link is-outlined" %>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="card-content">
+      <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
+      <div class="columns is-1 is-variable">
+          <div class="column">
+            <a href="#" class="button is-medium is-fullwidth is-link is-outlined">Sing-up</a>
+          </div>
+          <div class="column">
+            <a href="#" class="button is-medium is-fullwidth is-info is-outlined">Log-in</a>
+          </div>
       </div>
     </div>
   </div>

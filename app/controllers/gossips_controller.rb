@@ -5,6 +5,7 @@ class GossipsController < ApplicationController
   # GET /gossips.json
   def index
     @gossips = Gossip.all.order("created_at DESC")
+    @gossip = Gossip.new
   end
 
   # GET /gossips/1
@@ -28,10 +29,10 @@ class GossipsController < ApplicationController
 
     respond_to do |format|
       if @gossip.save
-        format.html { redirect_to @gossip, notice: 'Gossip was successfully created.' }
-        format.json { render :show, status: :created, location: @gossip }
+        format.html { redirect_to root_path, notice: 'Gossip was successfully created.' }
+        format.json { render root_path, status: :created, location: @gossip }
       else
-        format.html { render :new }
+        format.html { render root_path }
         format.json { render json: @gossip.errors, status: :unprocessable_entity }
       end
     end
