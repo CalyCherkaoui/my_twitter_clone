@@ -3,42 +3,77 @@
 <div class="section">
   <div class="columns is-centred">
     <div class="column"></div>
-    <div class="column is-8">
+    <div class="column is-6">
 
 
         <article class="panel is-primary">
           <p class="panel-heading">
-            Sign Up
+            To Sign-Up, please fill this form >>
           </p>
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
             <div class="panel">
               <%= f.error_notification %>
             </div>
+
             <div class="panel">
-              <%= f.label :name, 'Name:'%>
-              <%= f.input_field :name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "name" }%>
-              <br><br>
-              <%= f.input_field :username,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "username" }%>
-              <br><br>
-              <%= f.input_field :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-              <br><br>
-              <%= f.input_field :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-              <br><br>
-              <%= f.input_field :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th><%= f.label :name, 'Name:'%></th>
+                      <td>
+                        <%= f.input_field :name,
+                          required: true,
+                          autofocus: true,
+                          placeholder: "Enter your name here",
+                          input_html: { autocomplete: "name" }%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><%= f.label :username, 'Username:'%></th>
+                      <td>
+                        <%= f.input_field :username,
+                          required: true,
+                          autofocus: true,
+                          placeholder: "Your username can't have a white space in it.",
+                          input_html: { autocomplete: "username" }%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><%= f.label :email, 'Email:'%></th>
+                      <td>
+                        <%= f.input_field :email,
+                          required: true,
+                          autofocus: true,
+                          placeholder: "Exemple@email.com",
+                          input_html: { autocomplete: "email" }%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><%= f.label :password, 'Password:'%></th>
+                      <td>
+                        <%= f.input_field :password,
+                          required: true,
+                          placeholder: "Enter your password",
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          input_html: { autocomplete: "new-password" } %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><%= f.label :password_confirmation, 'Password confirmation:'%></th>
+                      <td>
+                        <%= f.input_field :password_confirmation,
+                          required: true,
+                          placeholder: "Enter again your password to confirm it",
+                          input_html: { autocomplete: "new-password" } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              
+              
             </div>
             <div class="panel-block">
               <%= f.button :submit, "Sign up", class: "button is-medium is-fullwidth is-link is-outlined"%>
@@ -51,29 +86,5 @@
     <div class="column"></div>
   </div>
 </div>
-
-
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= f.error_notification %>
-
-<div class="form-inputs">
-  <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-  <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-  <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-</div>
-
-<div class="form-actions">
-  <%= f.button :submit, "Sign up" %>
-</div>
-<% end %>
 
 <%= render "devise/shared/links" %>
