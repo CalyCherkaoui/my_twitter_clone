@@ -148,3 +148,32 @@ body, html {
 }
 
 // footer
+
+
+// Simple form
+
+.input-form {
+  border: none;
+  &:hover {
+    cursor: text;
+    border: 1px, blue, solid;
+  }
+}
+
+::-webkit-input-placeholder { /* Edge */
+  font-size: 0.8em;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  font-size: 0.8em;
+}
+
+::placeholder {
+  font-size: 0.8em;
+}
+
+table {
+  th, td {
+    border: none !important;
+  }
+}

@@ -1,24 +1,19 @@
-<h2>Sign up</h2>
-
 <div class="section">
   <div class="columns is-centred">
     <div class="column"></div>
     <div class="column is-6">
 
 
-        <article class="panel is-primary">
+        <article class="panel is-link">
           <p class="panel-heading">
-            To Sign-Up, please fill this form >>
+            Sign-Up Form
           </p>
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
             <div class="panel">
-              <%= f.error_notification %>
-            </div>
+                <%= f.error_notification %>
 
-            <div class="panel">
-
-                <table class="table">
+                <table class="table is-fullwidth">
                   <tbody>
                     <tr>
                       <th><%= f.label :name, 'Name:'%></th>
@@ -26,7 +21,8 @@
                         <%= f.input_field :name,
                           required: true,
                           autofocus: true,
-                          placeholder: "Enter your name here",
+                          placeholder: "Enter your name here >>",
+                          class: "input-form",
                           input_html: { autocomplete: "name" }%>
                       </td>
                     </tr>
@@ -35,8 +31,9 @@
                       <td>
                         <%= f.input_field :username,
                           required: true,
-                          autofocus: true,
-                          placeholder: "Your username can't have a white space in it.",
+                          placeholder: "Type your username here >>",
+                          class: "input-form",
+                          hint: ("Your username can't have a white space in it."),
                           input_html: { autocomplete: "username" }%>
                       </td>
                     </tr>
@@ -45,19 +42,24 @@
                       <td>
                         <%= f.input_field :email,
                           required: true,
-                          autofocus: true,
                           placeholder: "Exemple@email.com",
+                          class: "input-form",
                           input_html: { autocomplete: "email" }%>
                       </td>
                     </tr>
                     <tr>
                       <th><%= f.label :password, 'Password:'%></th>
                       <td>
-                        <%= f.input_field :password,
-                          required: true,
-                          placeholder: "Enter your password",
-                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                          input_html: { autocomplete: "new-password" } %>
+                          <div class="field">
+                            <div class="control">
+                              <%= f.input_field :password,
+                              required: true,
+                              placeholder: "Enter your password here >>",
+                              class: "input-form",
+                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                              input_html: { autocomplete: "new-password" } %>
+                            </div>
+                          </div>
                       </td>
                     </tr>
                     <tr>
@@ -65,7 +67,8 @@
                       <td>
                         <%= f.input_field :password_confirmation,
                           required: true,
-                          placeholder: "Enter again your password to confirm it",
+                          placeholder: "Confirm your password here >>",
+                          class: "input-form",
                           input_html: { autocomplete: "new-password" } %>
                       </td>
                     </tr>
@@ -81,10 +84,9 @@
           <% end %>
         </article>
       
+        <div class="devise-links"><%= render "devise/shared/links" %></div>
 
     </div>
     <div class="column"></div>
   </div>
 </div>
-
-<%= render "devise/shared/links" %>
