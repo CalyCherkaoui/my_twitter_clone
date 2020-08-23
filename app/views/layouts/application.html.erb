@@ -58,14 +58,13 @@
 
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light">
-                Log in
-              </a>
-            </div>
+            <% if user_signed_in? %>
+              <span class="ml-3 mr-5" ><%= link_to "@"+current_user.username, edit_user_registration_path, class: "has-text-warning"%></span>
+              <%= link_to "Log Out >>", destroy_user_session_path, method: :delete, class: "button is-warning is-outlined" %>
+            <% else %>
+              <%= link_to "Log-in", new_user_session_path, class: "button is-light is-outlined mr-3" %>
+              <%= link_to "Sign-up", new_user_registration_path, class: "button is-warning is-outlined" %>
+            <%end%>
           </div>
         </div>
       </div>
@@ -89,7 +88,7 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong class="brand-logo">GossipLand</strong> by <a href="https://jgthms.com">Houda Cherkaoui</a>. The source code is licensed
+        <strong class="brand-logo">GossipLand</strong> by <a href="#">Houda Cherkaoui</a>. The source code is licensed
         <a href="#">MIT</a>.
       </p>
     </div>

@@ -16,7 +16,7 @@ class GossipsController < ApplicationController
 
   # GET /gossips/new
   def new
-    @gossip = Gossip.new
+    @gossip = current_user.gossips.build
   end
 
   # GET /gossips/1/edit
@@ -26,7 +26,7 @@ class GossipsController < ApplicationController
   # POST /gossips
   # POST /gossips.json
   def create
-    @gossip = Gossip.new(gossip_params)
+    @gossip = current_user.gossips.build(gossip_params)
 
     respond_to do |format|
       if @gossip.save

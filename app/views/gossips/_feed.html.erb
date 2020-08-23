@@ -8,7 +8,7 @@
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-5">Hey, Tom Cat! Any Gossip to share?</p>
+          <p class="title is-5">Hey, <%= current_user.name %>! Any juicy gossip to share?</p>
         </div>
       </div>
 
@@ -29,7 +29,7 @@
         <% end %>
 
         <div class="field">
-          <%= form.text_area :body, class: "textarea", placeholder: "Type your gossip here !!"%>
+          <%= form.text_area :body, class: "textarea", value: "OMG! Turns out..." %>
         </div>
 
         <div class="actions">
@@ -57,7 +57,7 @@
     <div class="name-lockup">
 
       <img class="avatar" src="https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_960_720.jpg" alt="cat-avatar">
-      <div class="name">CatyCat <span>@snoopy33</span></div>
+      <div class="name"><%= gossip.user.name %> <span>@<%= gossip.user.username%></span></div>
 
     </div>
 

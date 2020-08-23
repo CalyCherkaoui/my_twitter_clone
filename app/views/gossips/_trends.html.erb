@@ -1,7 +1,7 @@
 <div class="column">
 
   <div class="card add-gossip is-hidden-desktop">
-    <div class="card-content">
+        <div class="card-content">
       <div class="media">
         <div class="media-left">
           <figure class="image is-48x48">
@@ -9,7 +9,7 @@
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-5">Hey, Tom Cat! Any Gossip to share?</p>
+          <p class="title is-5">Hey, <%= current_user.name %>! Any juicy gossip to share?</p>
         </div>
       </div>
 
@@ -17,27 +17,38 @@
         <%= link_to 'New Gossip', new_gossip_path %>
 
         <%= form_for @gossip do |form| %>
-            <% if @gossip.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
+        <% if @gossip.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
 
-                <ul>
-                  <% gossip.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
-              </div>
+          <ul>
+            <% gossip.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
             <% end %>
-
-            <div class="field">
-              <%= form.text_area :body, class: "textarea", placeholder: "Type your gossip here !!"%>
-            </div>
-
-            <div class="actions">
-              <%= form.submit class: "button is-fullwidth is-link is-outlined" %>
-            </div>
+          </ul>
+        </div>
         <% end %>
 
+        <div class="field">
+          <%= form.text_area :body, class: "textarea", value: "OMG! Turns out..." %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit class: "button is-fullwidth is-link is-outlined" %>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="card-content">
+      <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
+      <div class="columns is-1 is-variable">
+          <div class="column">
+            <a href="#" class="button is-medium is-fullwidth is-link is-outlined">Sing-up</a>
+          </div>
+          <div class="column">
+            <a href="#" class="button is-medium is-fullwidth is-info is-outlined">Log-in</a>
+          </div>
       </div>
     </div>
   </div>
@@ -57,17 +68,14 @@
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-4">John Smith</p>
-          <p class="subtitle is-6">@johnsmith</p>
+          <p class="title is-4"><%= current_user.name %></p>
+          <p class="subtitle is-6">@<%= current_user.username %></p>
         </div>
       </div>
 
       <div class="content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-        <a href="#">#css</a> <a href="#">#responsive</a>
-        <br>
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        Phasellus nec iaculis mauris.
       </div>
     </div>
   </div>
