@@ -15,7 +15,6 @@
             </div>
 
             <div class="content">
-              <%= link_to 'New Gossip', new_gossip_path %>
 
               <%= form_for @gossip do |form| %>
                   <% if @gossip.errors.any? %>
@@ -31,7 +30,7 @@
                   <% end %>
 
                   <div class="field">
-                    <%= form.text_area :body, class: "textarea", value: "OMG! Turns out..." %>
+                    <%= form.text_area :body, class: "textarea", value: "OMG! Turns out...", autofocus: true %>
                   </div>
 
                   <div class="actions">

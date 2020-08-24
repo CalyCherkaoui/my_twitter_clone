@@ -1,5 +1,24 @@
-<h1>New Gossip</h1>
+<div class="section">
+  <div class="columns is-centred">
+    <div class="column"></div>
+    <div class="column is-6">
 
-<%= render 'form', gossip: @gossip %>
+        <article class="panel is-info">
+          <p class="panel-heading">
+            Create Gossip
+          </p>
+          <div class="px-4 py-2">
+            <%= render 'form', gossip: @gossip %>
+          </div>
 
-<%= link_to 'Back', gossips_path %>
+        </article>
+      
+        <div class="devise-links">
+          <%= link_to 'Cancel', gossips_path, class: "mr-4"%>
+          <%= link_to 'Home', gossips_path %>
+        </div>
+
+    </div>
+    <div class="column"></div>
+  </div>
+</div>

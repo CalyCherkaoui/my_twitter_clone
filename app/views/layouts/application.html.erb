@@ -28,9 +28,9 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="#">
-            Home
-          </a>
+          <%= link_to "Home", root_path, class: "navbar-item"%>
+
+          <%= link_to "Gossip", new_gossip_path, class: "navbar-item"%>
 
           <a class="navbar-item" href="#">
             Trends
@@ -42,9 +42,6 @@
             </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item">
-                About
-              </a>
               <a class="navbar-item">
                 Contact
               </a>

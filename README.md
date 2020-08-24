@@ -1,10 +1,12 @@
 # Building a Blog with Rails
 
-For pure learning porposes, I've tryed here to build a Twitter clone using what I've learned so far about Rails:
+For pure learning purposes, I've tried here to build a Twitter clone using what I've learned so far about Rails:
   - Models
   - MVC concept
   - Sessions, Cookies
   - Authentication
+
+## Demo:
 
 ## Built with:
 
@@ -13,19 +15,34 @@ For pure learning porposes, I've tryed here to build a Twitter clone using what 
 <a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg"></a>
 <a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg"></a>
 
-- Framework/API : ``Ruby on Rails``, ``Bootstrap 4``
+- Framework/API : ``Ruby on Rails``, ``Bulma``
 - Langage: ``Ruby``
 - Text-editor: ``Visual Studio Code``
 
+## Somme useful Gems added:
+
+- Devise
+- bulma-rails
+- gravatar_image_tag
+- simple_form
 
 ## Models
 
 The models created and their relationships:
 ```
-Post:
-  -Body:text
-  HAS_MANY:
-  HAS_MANY:
+Gossip:
+  -id: Integer
+  -Body:Text
+  BELONGS_TO: User
+```
+```
+User:
+  -id: Integer
+  -Name:String
+  -Username:String
+  -Password:Secure password with Devise
+  -Email:String, Email format
+  HAS_MANY: Gossips
 ```
 
 ## Getting started

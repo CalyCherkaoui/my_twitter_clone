@@ -12,11 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, class: "textarea"%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "button is-fullwidth is-info is-outlined" %>
   </div>
 <% end %>

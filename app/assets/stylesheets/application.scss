@@ -18,8 +18,10 @@
 @import url("https://fonts.googleapis.com/css?family=Crafty+Girls|Indie+Flower|Just+Another+Hand|Lakki+Reddy|Mansalva|Nanum+Gothic|Parisienne|Rock+Salt|Sacramento|Sedgwick+Ave+Display&display=swap");
 
 
-body, html {
-  height: auto;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 
