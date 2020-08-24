@@ -1,12 +1,13 @@
 class GossipsController < ApplicationController
   before_action :set_gossip, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, expept: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /gossips
   # GET /gossips.json
   def index
     @gossips = Gossip.all.order("created_at DESC")
     @gossip = Gossip.new
+    @users = User.all
   end
 
   # GET /gossips/1

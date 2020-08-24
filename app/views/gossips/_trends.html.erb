@@ -1,84 +1,100 @@
 <div class="column">
 
   <div class="card add-gossip is-hidden-desktop">
-        <div class="card-content">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-48x48">
-            <img src="https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_960_720.jpg" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="media-content">
-          <p class="title is-5">Hey, <%= current_user.name %>! Any juicy gossip to share?</p>
-        </div>
-      </div>
+    <% if user_signed_in? %>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_960_720.jpg" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-5">Hey, <%= current_user.name %>! Any juicy gossip to share?</p>
+              </div>
+            </div>
 
-      <div class="content">
-        <%= link_to 'New Gossip', new_gossip_path %>
+            <div class="content">
+              <%= link_to 'New Gossip', new_gossip_path %>
 
-        <%= form_for @gossip do |form| %>
-        <% if @gossip.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
+              <%= form_for @gossip do |form| %>
+                  <% if @gossip.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
 
-          <ul>
-            <% gossip.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-        <% end %>
+                      <ul>
+                        <% gossip.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
 
-        <div class="field">
-          <%= form.text_area :body, class: "textarea", value: "OMG! Turns out..." %>
-        </div>
+                  <div class="field">
+                    <%= form.text_area :body, class: "textarea", value: "OMG! Turns out..." %>
+                  </div>
 
-        <div class="actions">
-          <%= form.submit class: "button is-fullwidth is-link is-outlined" %>
-        </div>
-        <% end %>
+                  <div class="actions">
+                    <%= form.submit class: "button is-fullwidth is-link is-outlined" %>
+                  </div>
+              <% end %>
 
-      </div>
-    </div>
-    <div class="card-content">
-      <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
-      <div class="columns is-1 is-variable">
-          <div class="column">
-            <a href="#" class="button is-medium is-fullwidth is-link is-outlined">Sing-up</a>
+            </div>
+
           </div>
-          <div class="column">
-            <a href="#" class="button is-medium is-fullwidth is-info is-outlined">Log-in</a>
+          <div class="card-content">
+            <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
+            <div class="columns is-1 is-variable">
+                <div class="column">
+                  <a href="#" class="button is-medium is-fullwidth is-link is-outlined">Sing-up</a>
+                </div>
+                <div class="column">
+                  <a href="#" class="button is-medium is-fullwidth is-info is-outlined">Log-in</a>
+                </div>
+            </div>
           </div>
-      </div>
-    </div>
+    <% else %>
+          <div class="card-content">
+            <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
+            <div class="columns is-1 is-variable">
+                <div class="column">
+                  <a href="#" class="button is-medium is-fullwidth is-link is-outlined">Sing-up</a>
+                </div>
+                <div class="column">
+                  <a href="#" class="button is-medium is-fullwidth is-info is-outlined">Log-in</a>
+                </div>
+            </div>
+          </div>
+    <% end %>
   </div>
 
-
-  <div class="card user-profile-card is-hidden-touch">
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <img src="https://versions.bulma.io/0.7.4/images/placeholders/1280x960.png" alt="Placeholder image">
-      </figure>
-    </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-48x48">
-            <img src="https://versions.bulma.io/0.7.4/images/placeholders/96x96.png" alt="Placeholder image">
-          </figure>
+  <% if user_signed_in? %>
+    <div class="card user-profile-card is-hidden-touch">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="https://versions.bulma.io/0.7.4/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="https://versions.bulma.io/0.7.4/images/placeholders/96x96.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4"><%= current_user.name %></p>
+            <p class="subtitle is-6">@<%= current_user.username %></p>
+          </div>
         </div>
-        <div class="media-content">
-          <p class="title is-4"><%= current_user.name %></p>
-          <p class="subtitle is-6">@<%= current_user.username %></p>
+
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris.
         </div>
       </div>
-
-      <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris.
-      </div>
     </div>
-  </div>
+  <% end %>
   <nav class="panel panel-trend">
     <p class="panel-heading side-panel">Top 3 most commented Gossips</p>
     <a href="" class="panel-block">Trend 1</a>
