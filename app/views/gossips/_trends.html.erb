@@ -5,9 +5,9 @@
           <div class="card-content">
             <div class="media">
               <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_960_720.jpg" alt="Placeholder image">
-                </figure>
+                <p class="image is-48x48">
+                  <%= gravatar_image_tag(current_user.email, size: 48, alt: current_user.name) %>
+                </p>
               </div>
               <div class="media-content">
                 <p class="title is-5">Hey, <%= current_user.name %>! Any juicy gossip to share?</p>
@@ -42,17 +42,6 @@
             </div>
 
           </div>
-          <div class="card-content">
-            <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
-            <div class="columns is-1 is-variable">
-                <div class="column">
-                  <a href="#" class="button is-medium is-fullwidth is-link is-outlined">Sing-up</a>
-                </div>
-                <div class="column">
-                  <a href="#" class="button is-medium is-fullwidth is-info is-outlined">Log-in</a>
-                </div>
-            </div>
-          </div>
     <% else %>
           <div class="card-content">
             <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
@@ -72,14 +61,14 @@
     <div class="card user-profile-card is-hidden-touch">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img src="https://versions.bulma.io/0.7.4/images/placeholders/1280x960.png" alt="Placeholder image">
+          <img src="https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_960_720.jpg" alt="Placeholder image">
         </figure>
       </div>
       <div class="card-content">
         <div class="media">
           <div class="media-left">
             <figure class="image is-48x48">
-              <img src="https://versions.bulma.io/0.7.4/images/placeholders/96x96.png" alt="Placeholder image">
+              <%= gravatar_image_tag(current_user.email, alt: current_user.name) %>
             </figure>
           </div>
           <div class="media-content">
@@ -89,8 +78,11 @@
         </div>
 
         <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris.
+          <span><%= current_user.gossips.count%> Gossips<span>
+          <span class="inline-separator"> . </span>
+          <span>30 followrs</span>
+          <span class="inline-separator"> . </span>
+          <span>20 followings</span>
         </div>
       </div>
     </div>
