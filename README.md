@@ -8,6 +8,17 @@ For pure learning purposes, I've tried here to build a Twitter clone using what 
 
 ## Demo:
 
+Home page with two scenarios : When user is Loged-in and when not:
+<br>
+
+<img height="300" src="./app/assets/images/publicHome.png"><span> </span><img height="300" src="./app/assets/images/LogedinUserHome.png">
+<br><br>
+Some Forms:
+
+<img height="300" src="./app/assets/images/edituser.png"><span> </span><img height="300" src="./app/assets/images/login.png"><span> </span><img height="300" src="./app/assets/images/signup.png"><span> </span><img height="300" src="./app/assets/images/password.png">
+
+
+
 ## Built with:
 
 <a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/ruby-lang/ruby-lang-horizontal.svg"></a>

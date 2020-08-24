@@ -40,7 +40,7 @@
       </div>
     <% else %>
       <div class="card-content">
-          <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
+          <h2 class="title is-3 is-spaced">Share some Gossip!<h2>
           <div class="columns is-1 is-variable">
               <div class="column">
                 <%= link_to 'Sing-up', new_user_registration_path, class: "button is-medium is-fullwidth is-link is-outlined" %>
@@ -72,8 +72,8 @@
         <i class="icon-like fa fa-heart"> 1</i>
         <i class="icon-dislike fa fa-thumbs-o-down"> 0</i>
         <i class="icon-comment fa fa-comment-o"> 0</i>
+        <i class="icon-quote-gossiper fa fa-quote-right"> 0</i>
         <% if user_signed_in? && current_user.id == gossip.user.id %>
-          <i class="icon-quote-gossiper fa fa-quote-right"> 0</i>
           <%= link_to gossip, class: "icon-show" do %>
             <i class="fa fa-link"></i>
           <% end %>
