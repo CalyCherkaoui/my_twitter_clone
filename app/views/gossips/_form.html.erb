@@ -1,0 +1,21 @@
+<%= form_with(model: gossip, local: true) do |form| %>
+  <% if gossip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
+
+      <ul>
+        <% gossip.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_area :body, class: "textarea"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button is-fullwidth is-info is-outlined" %>
+  </div>
+<% end %>

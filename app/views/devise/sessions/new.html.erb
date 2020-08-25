@@ -1,0 +1,67 @@
+<div class="section">
+  <div class="columns is-centred">
+    <div class="column"></div>
+    <div class="column is-6">
+
+
+        <article class="panel is-info">
+          <p class="panel-heading">
+            Log-in
+          </p>
+
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <div class="panel">
+                <%= f.error_notification %>
+
+                <table class="table is-fullwidth">
+                  <tbody>
+                    <tr>
+                      <th><%= f.label :email, 'Email:'%></th>
+                      <td>
+                        <%= f.input_field :email,
+                          required: true,
+                          placeholder: "Exemple@email.com",
+                          autofocus: true,
+                          class: "input-form",
+                          input_html: { autocomplete: "email" }%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><%= f.label :password, 'Password:'%></th>
+                      <td>
+                          <div class="field">
+                            <div class="control">
+                              <%= f.input_field :password,
+                              required: true,
+                              placeholder: "Enter your password here >>",
+                              class: "input-form",
+                              input_html: { autocomplete: "current-password" } %>
+                            </div>
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><%= f.label :remember_me, 'Remember me:'%></th>
+                      <td>
+                        <%= f.input_field :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+            </div>
+            <div class="panel-block">
+              <%= f.button :submit, "Log in", class: "button is-medium is-fullwidth is-info is-outlined"%>
+            </div>
+          <% end %>
+        </article>
+      
+        <div class="devise-links"><%= render "devise/shared/links" %></div>
+
+    </div>
+    <div class="column"></div>
+  </div>
+</div>
+
+

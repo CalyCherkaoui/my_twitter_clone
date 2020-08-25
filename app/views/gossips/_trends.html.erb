@@ -1,0 +1,101 @@
+<div class="column">
+
+  <div class="card add-gossip is-hidden-desktop">
+    <% if user_signed_in? %>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <p class="image is-48x48">
+                  <%= gravatar_image_tag(current_user.email, size: 48, alt: current_user.name) %>
+                </p>
+              </div>
+              <div class="media-content">
+                <p class="title is-5">Hey, <%= current_user.name %>! Any juicy gossip to share?</p>
+              </div>
+            </div>
+
+            <div class="content">
+
+              <%= form_for @gossip do |form| %>
+                  <% if @gossip.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
+
+                      <ul>
+                        <% gossip.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+
+                  <div class="field">
+                    <%= form.text_area :body, class: "textarea", value: "OMG! Turns out...", autofocus: true %>
+                  </div>
+
+                  <div class="actions">
+                    <%= form.submit class: "button is-fullwidth is-link is-outlined" %>
+                  </div>
+              <% end %>
+
+            </div>
+
+          </div>
+    <% else %>
+          <div class="card-content">
+            <h2 class="title is-3 is-spaced">Wana share some Gossip?<h2>
+            <div class="columns is-1 is-variable">
+                <div class="column">
+                  <a href="#" class="button is-medium is-fullwidth is-link is-outlined">Sing-up</a>
+                </div>
+                <div class="column">
+                  <a href="#" class="button is-medium is-fullwidth is-info is-outlined">Log-in</a>
+                </div>
+            </div>
+          </div>
+    <% end %>
+  </div>
+
+  <% if user_signed_in? %>
+    <div class="card user-profile-card is-hidden-touch">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_960_720.jpg" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <%= gravatar_image_tag(current_user.email, alt: current_user.name) %>
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4"><%= current_user.name %></p>
+            <p class="subtitle is-6">@<%= current_user.username %></p>
+          </div>
+        </div>
+
+        <div class="content">
+          <span><%= current_user.gossips.count%> Gossips<span>
+          <span class="inline-separator"> . </span>
+          <span>30 followrs</span>
+          <span class="inline-separator"> . </span>
+          <span>20 followings</span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <nav class="panel panel-trend">
+    <p class="panel-heading side-panel">Top 3 most commented Gossips</p>
+    <a href="" class="panel-block">Trend 1</a>
+    <a href="" class="panel-block">Trend 1</a>
+    <a href="" class="panel-block">Trend 1</a>
+  </nav>
+  <nav class="panel">
+    <p class="panel-heading side-panel">Top 3 new Gossip</p>
+    <a href="" class="panel-block">Trend 1</a>
+    <a href="" class="panel-block">Trend 1</a>
+    <a href="" class="panel-block">Trend 1</a>
+  </nav>
+</div>

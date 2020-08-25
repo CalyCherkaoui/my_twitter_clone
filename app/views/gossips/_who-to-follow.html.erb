@@ -1,0 +1,26 @@
+<div class="column">
+  <nav class="panel">
+    <p class="panel-heading side-panel">Who to follow</p>
+  </nav>
+
+  <% @users.each do |user| %>
+    <div class="panel-block">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-32x32">
+            <%= gravatar_image_tag(user.email, alt: user.name) %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong><%= user.name %></strong>
+              <small>@<%= user.username %></small>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  <% end %>
+
+</div>

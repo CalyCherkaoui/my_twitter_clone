@@ -1,0 +1,42 @@
+<div class= "columns mt-5">
+  <div class="column is-1"></div>
+  <div class="column is-10">
+    <div class="gossip-container">
+
+          <div class="name-lockup">
+
+            <%= gravatar_image_tag(@gossip.user.email, alt: @gossip.user.name, class: "avatar") %>
+            <div class="name"><%= @gossip.user.name %> <span>@<%= @gossip.user.username%></span></div>
+
+          </div>
+
+          <blockquote>
+            <%= @gossip.body %>
+          </blockquote>
+
+          <div class="actions">
+            <i class="icon-reply fa fa-reply-all"></i>
+            <i class="icon-spread fa fa-bullhorn"> 0</i>
+            <i class="icon-like fa fa-heart"> 1</i>
+            <i class="icon-dislike fa fa-thumbs-o-down"> 0</i>
+            <i class="icon-comment fa fa-comment-o"> 0</i>
+            <% if user_signed_in? %>
+              <i class="icon-quote-gossiper fa fa-quote-right"> 0</i>
+              <%= link_to @gossip, class: "icon-show" do %>
+                <i class="fa fa-link"></i>
+              <% end %>
+              <%= link_to edit_gossip_path(@gossip), class: "icon-edit" do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+              <%= link_to @gossip, method: :delete, data: { confirm: 'Are you sure you want to delete this Gossip?' }, class: "icon-delete" do %>
+                <i class="fa fa-trash-o"></i>
+              <% end %>
+            <% end %>
+          </div>
+
+          <span class="time"><%= time_ago_in_words(@gossip.created_at) %> ago</span>
+
+    </div>
+  </div>
+  <div class="column is-1"></div>
+</div>

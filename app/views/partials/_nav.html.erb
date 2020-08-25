@@ -1,0 +1,54 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+
+        <%= link_to root_path, class: "navbar-item brand-logo" do %>
+              <h1>GossipLand</h1>
+        <% end %>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <%= link_to "Home", root_path, class: "navbar-item"%>
+
+          <%= link_to "Gossip", new_gossip_path, class: "navbar-item"%>
+
+          <a class="navbar-item" href="#">
+            Trends
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <% if user_signed_in? %>
+              <span class="ml-3 mr-5" ><%= link_to "@"+current_user.username, edit_user_registration_path, class: "has-text-warning"%></span>
+              <%= link_to "Log Out >>", destroy_user_session_path, method: :delete, class: "button is-warning is-outlined" %>
+            <% else %>
+              <%= link_to "Log-in", new_user_session_path, class: "button is-light is-outlined mr-3" %>
+              <%= link_to "Sign-up", new_user_registration_path, class: "button is-warning is-outlined" %>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </nav>

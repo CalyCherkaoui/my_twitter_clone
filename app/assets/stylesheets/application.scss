@@ -1,0 +1,179 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bulma';
+@import url("https://fonts.googleapis.com/css?family=Crafty+Girls|Indie+Flower|Just+Another+Hand|Lakki+Reddy|Mansalva|Nanum+Gothic|Parisienne|Rock+Salt|Sacramento|Sedgwick+Ave+Display&display=swap");
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #1a2236;
+}
+
+.brand-logo {
+  font-family: 'Sacramento', cursive;
+  color: #1a2236;
+  font-size: 2em;
+
+  h1 {
+    color: white !important;
+    font-weight: 1000 !important;
+    font-size: 2.5rem !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+// .image {
+//   border-radius: 50%;
+//   img {
+//     border-radius: 50%;
+//   }
+// }
+
+.notification {
+  margin-top: 1.5em;
+}
+
+.notifications:not(:last-child) {
+  margin-bottom: 0;
+}
+
+// gossip card
+
+.gossip-container {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 25px 25px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 2em auto;
+
+  .name-lockup {
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .avatar {
+      width: 5em;
+      height: 5em;
+      object-fit: cover;
+      border-radius: 5px;
+      float: left;
+      margin-right: 15px;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 1.1em;
+      padding-top: 7px;
+      margin-left: 10px;
+      color: #1c528a;
+
+      span {
+        font-weight: normal;
+        color: grey;
+        font-size: 0.9em;
+        display: block;
+      }
+    }
+  }
+
+  blockquote {
+    margin: 30px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: #1a2236;
+  }
+
+  .actions {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+
+    [class*="icon-"] {
+      color: #ff9600;
+      margin-right: 20px;
+
+      &::before {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .time {
+    color: gray;
+    font-size: 0.8em;
+  }
+}
+
+// side panels Who to follow and Top 3
+
+.side-panel {
+  background-color: #1a2236;
+  color: white;
+}
+
+.user-profile-card {
+  margin-bottom: 2em;
+}
+
+.panel-trend {
+  margin-bottom: 2em;
+}
+
+// Simple form
+
+.input-form {
+  border: none;
+
+  &:hover {
+    cursor: text;
+    border: 1px blue solid;
+  }
+}
+
+::-webkit-input-placeholder { /* Edge */
+  font-size: 0.8em;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  font-size: 0.8em;
+}
+
+::placeholder {
+  font-size: 0.8em;
+}
+
+table {
+  th,
+  td {
+    border: none !important;
+  }
+}
+
+.devise-links {
+  font-size: 0.8em;
+}
