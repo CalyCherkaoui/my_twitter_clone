@@ -17,21 +17,19 @@
 @import 'bulma';
 @import url("https://fonts.googleapis.com/css?family=Crafty+Girls|Indie+Flower|Just+Another+Hand|Lakki+Reddy|Mansalva|Nanum+Gothic|Parisienne|Rock+Salt|Sacramento|Sedgwick+Ave+Display&display=swap");
 
-
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-
 .navbar {
-  background-color: #1A2236;
+  background-color: #1a2236;
 }
 
 .brand-logo {
   font-family: 'Sacramento', cursive;
-  color: #1A2236;
+  color: #1a2236;
   font-size: 2em;
 
   h1 {
@@ -43,7 +41,6 @@ body {
     padding-top: 0;
     padding-bottom: 0;
   }
-
 }
 
 // .image {
@@ -60,7 +57,6 @@ body {
 .notifications:not(:last-child) {
   margin-bottom: 0;
 }
-
 
 // gossip card
 
@@ -96,7 +92,7 @@ body {
       font-size: 1.1em;
       padding-top: 7px;
       margin-left: 10px;
-      color: #1C528A;
+      color: #1c528a;
       span {
         font-weight: normal;
         color: grey;
@@ -111,7 +107,7 @@ body {
     margin: 30px 0;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.2em;
-    color: #1A2236;
+    color: #1a2236;
   }
 
   .actions {
@@ -131,13 +127,12 @@ body {
     color: gray;
     font-size: 0.8em;
   }
-
 }
 
 // side panels Who to follow and Top 3
 
 .side-panel {
-  background-color: #1A2236;
+  background-color: #1a2236;
   color: white;
 }
 
@@ -149,16 +144,13 @@ body {
   margin-bottom: 2em;
 }
 
-// footer
-
-
 // Simple form
 
 .input-form {
   border: none;
   &:hover {
     cursor: text;
-    border: 1px, blue, solid;
+    border: 1px blue solid;
   }
 }
 
