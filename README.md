@@ -36,6 +36,7 @@ Some Forms:
 - bulma-rails
 - gravatar_image_tag
 - simple_form
+- rubocop
 
 ## Models
 
