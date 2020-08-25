@@ -1,19 +1,18 @@
 class GossipsController < ApplicationController
-  before_action :set_gossip, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_gossip, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
 
   # GET /gossips
   # GET /gossips.json
   def index
-    @gossips = Gossip.all.order("created_at DESC")
+    @gossips = Gossip.all.order('created_at DESC')
     @gossip = Gossip.new
     @users = User.all
   end
 
   # GET /gossips/1
   # GET /gossips/1.json
-  def show
-  end
+  def show; end
 
   # GET /gossips/new
   def new
@@ -21,8 +20,7 @@ class GossipsController < ApplicationController
   end
 
   # GET /gossips/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /gossips
   # POST /gossips.json
@@ -65,13 +63,14 @@ class GossipsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gossip
-      @gossip = Gossip.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def gossip_params
-      params.require(:gossip).permit(:body)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gossip
+    @gossip = Gossip.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def gossip_params
+    params.require(:gossip).permit(:body)
+  end
 end
