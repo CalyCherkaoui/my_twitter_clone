@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_220545) do
+ActiveRecord::Schema.define(version: 2020_08_25_193807) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "user_id", null: false
+    t.integer "gossip_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gossip_id"], name: "index_comments_on_gossip_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "gossips", force: :cascade do |t|
     t.text "body"
@@ -34,4 +44,6 @@ ActiveRecord::Schema.define(version: 2020_08_22_220545) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "comments", "gossips"
+  add_foreign_key "comments", "users"
 end
