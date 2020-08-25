@@ -61,7 +61,6 @@ body {
 // gossip card
 
 .gossip-container {
-
   background-color: white;
   border: 1px solid #ccc;
   padding: 25px 25px;
@@ -93,6 +92,7 @@ body {
       padding-top: 7px;
       margin-left: 10px;
       color: #1c528a;
+
       span {
         font-weight: normal;
         color: grey;
@@ -100,7 +100,6 @@ body {
         display: block;
       }
     }
-
   }
 
   blockquote {
@@ -114,9 +113,11 @@ body {
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
     margin-bottom: 20px;
+
     [class*="icon-"] {
       color: #ff9600;
       margin-right: 20px;
+
       &::before {
         margin-right: 5px;
       }
@@ -148,6 +149,7 @@ body {
 
 .input-form {
   border: none;
+
   &:hover {
     cursor: text;
     border: 1px blue solid;
@@ -167,7 +169,8 @@ body {
 }
 
 table {
-  th, td {
+  th,
+  td {
     border: none !important;
   }
 }
