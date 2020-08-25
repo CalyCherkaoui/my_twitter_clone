@@ -1,1 +1,1 @@
-json.partial! "gossips/gossip", gossip: @gossip
+json.partial! 'gossips/gossip', gossip: @gossip

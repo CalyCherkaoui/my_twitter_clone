@@ -1,1 +1,1 @@
-json.array! @gossips, partial: "gossips/gossip", as: :gossip
+json.array! @gossips, partial: 'gossips/gossip', as: :gossip
