@@ -6,17 +6,28 @@ For pure learning purposes, I've tried here to build a Twitter clone using what 
   - Sessions, Cookies
   - Authentication
 
+## Live-demo:
+[Deployed link to heroku](https://gossip-land.herokuapp.com/)
+
+To test the app:
+  - username: test
+  - email: test@test.com
+  - password: 123456789
+  
 ## Demo:
 
-Home page with two scenarios : When user is Loged-in and when not:
-<br>
+Home page with two scenarios :
 
-<img height="300" src="./app/assets/images/publicHome.png"><span> </span><img height="300" src="./app/assets/images/LogedinUserHome.png">
+- When user is not Loged-in:
+<br>
+<img height="300" src="./app/assets/images/publicHome.png">
+<br><br>
+- When user is Loged-in:
+<br>
+<img height="300" src="./app/assets/images/LogedinUserHome.png">
 <br><br>
 Some Forms:
-
 <img height="300" src="./app/assets/images/edituser.png"><span> </span><img height="300" src="./app/assets/images/login.png"><span> </span><img height="300" src="./app/assets/images/signup.png"><span> </span><img height="300" src="./app/assets/images/password.png">
-
 
 
 ## Built with:
@@ -26,9 +37,8 @@ Some Forms:
 <a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg"></a>
 <a href="#" target="_blank"><img height="40" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg"></a>
 
-- Framework/API : ``Ruby on Rails``, ``Bulma``
+- Framework: ``Ruby on Rails``, ``Bulma``
 - Langage: ``Ruby``
-- Text-editor: ``Visual Studio Code``
 
 ## Somme useful Gems added:
 
