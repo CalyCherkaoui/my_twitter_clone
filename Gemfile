@@ -14,7 +14,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 5.6'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
